@@ -1,0 +1,23 @@
+<ng-container
+*ngIf="todoArray.length >0 else error">
+  
+<mat-list role="list" *ngFor="let t of todoArray" class="d-flex justify-content-between"
+
+
+>
+    <mat-list-item role="listitem">{{t.todos}}
+
+    </mat-list-item>
+    <button mat-button color="accent" class="mr-2" >edit</button>
+    <button mat-button color="accent" (click)="onDelete(t.id)">delete</button>
+
+
+  
+  </mat-list>
+</ng-container>
+
+  <ng-template #error>
+    <p class="alert alert-info">no todo added</p>
+  </ng-template>
+
+  
